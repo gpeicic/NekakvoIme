@@ -62,15 +62,18 @@ public class Main {
 
         //Domaca zadaca
         //1.zadatak
+        System.out.println("1.zadatak");
         int prviBroj = 4;
         int drugiBroj = 2;
         System.out.println("Zbroj broja "+prviBroj+" + "+ drugiBroj+" = "+ (prviBroj+drugiBroj));
         System.out.println();
 
         //2.Zadatak
-        System.out.printf("Gabriel Peičić%n%nZagreb%n");
+        System.out.println("2.zadatak");
+        System.out.printf("Gabriel Peičić%n%nZagreb%n%n");
 
         //3.Zadatak
+        System.out.println("3.Zadatak");
         int a = 10;
         int b = 12;
         double c;
