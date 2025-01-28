@@ -1,7 +1,15 @@
 
+
 public class Main {
     public static void main(String[] args) {
+        Zadaca27_01 instance = new Zadaca27_01();
 
+        int randomBroj =(int)(Math.random()*100000);
+        int zbrojZnamenki = instance.zadacaPrviZadatak(randomBroj);
+        System.out.println("Zbroj znamenki broja " + randomBroj + " je: " + zbrojZnamenki);
+        //Drugi zadatak
+        instance.zadacaDrugiZadatak();
+/*
         short x = 2;
         long myWidth;
         myWidth = 5252;
@@ -78,6 +86,6 @@ public class Main {
         int b = 12;
         double c;
         c=Math.sqrt(((Math.pow(a,2))+(Math.pow(b,2))));
-        System.out.println("Duljina hipotenuze je "+ c);
+        System.out.println("Duljina hipotenuze je "+ c);*/
     }
 }
