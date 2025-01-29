@@ -2,13 +2,98 @@
 
 public class Main {
     public static void main(String[] args) {
-        Zadaca27_01 instance = new Zadaca27_01();
+        int suma = 0;
+        int j;
+        int znam;
+        int brojKvadrata = 0;
+        for(int i = 153;i <= 10000; i++){
+            j = i;
+            suma = 0;
+            brojKvadrata = 0;
+            while(j > 0){
+                brojKvadrata++;
+                j/=10;
+            }
+            j= i;
+            while(j > 0){
+                znam = j % 10;
+              //  suma += Math.pow(znam,3);
+                suma += Math.pow(znam,brojKvadrata);
+                j/=10;
 
+            }
+
+            if(suma == i){
+                System.out.println(i);
+            }
+        }
+
+
+
+
+
+/*
+        boolean jeProst;
+        int n = 50;
+        for (int i = 1; i <= n; i++) {
+            if (i == 1) { continue; }
+
+            jeProst = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    jeProst = false;
+                    break;
+                }
+            }
+            if (jeProst) // je li prost?
+                System.out.println(i); // Da, ispiši ga
+        }
+
+
+*/
+
+/*
+        int faktorijel = 1;
+
+        for (int i = 1; i <= 10; i++) {
+            faktorijel = 1;
+
+            for (int j = 1; j <= i; j++) {
+                faktorijel *= j;
+            }
+
+            System.out.println(i + "! = " + faktorijel);
+        }
+
+*/
+            //for(int i = 1; i <= 10;i++){
+          //  for(int j = 1; j <= 12;j++){
+                //     System.out.print("\t" + ((i-1) * 12 + j));
+            }
+            //   System.out.println();
+        }
+
+
+
+
+
+
+
+
+     /*   Zadaca27_01 instance = new Zadaca27_01();
+        //Prvi zadatak
         int randomBroj =(int)(Math.random()*100000);
+
         int zbrojZnamenki = instance.zadacaPrviZadatak(randomBroj);
         System.out.println("Zbroj znamenki broja " + randomBroj + " je: " + zbrojZnamenki);
+
         //Drugi zadatak
         instance.zadacaDrugiZadatak();
+*/
+
+
+
+
 /*
         short x = 2;
         long myWidth;
@@ -87,5 +172,5 @@ public class Main {
         double c;
         c=Math.sqrt(((Math.pow(a,2))+(Math.pow(b,2))));
         System.out.println("Duljina hipotenuze je "+ c);*/
-    }
-}
+//    }
+//}

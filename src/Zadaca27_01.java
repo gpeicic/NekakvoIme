@@ -1,7 +1,12 @@
 public class Zadaca27_01 {
     //Zadatak 1.
     public int zadacaPrviZadatak(int randomBroj){
-        return (randomBroj == 0) ? 0 : (randomBroj % 10) + zadacaPrviZadatak(randomBroj / 10);
+        int suma = 0;
+        while (randomBroj != 0) {
+            suma += randomBroj % 10;
+            randomBroj /= 10;
+        }
+        return (suma == 0) ? 0 : suma + zadacaPrviZadatak(randomBroj);
     }
 
     //Zadatak 2.
