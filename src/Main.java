@@ -1,8 +1,137 @@
-
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+/*
+        String nizZnakova = "Danas je cetvrtak";
+        System.out.println("velicina: " + nizZnakova.length());
+        System.out.println("potraga za znakom(charAt): " + nizZnakova.charAt(11));
+        System.out.println("Index of: " + nizZnakova.indexOf('c'));
+        System.out.println("Starts with Da:" + nizZnakova.startsWith("Da"));
+        System.out.println("Starts with ka:" + nizZnakova.startsWith("ka"));
+        System.out.println("Substring:" + nizZnakova.substring(6));
+        */
+        //Zadatak 2.
+        Scanner unos = new Scanner(System.in);
+        System.out.println("Zadatak 2.");
+        System.out.print("Unesite broj: ");
+
+        int brojKojiProvjeravamo = Integer.parseInt(unos.nextLine());
+
+        int sumaDjelitelja = 0;
+
+
+        for (int i = 1; i < brojKojiProvjeravamo; i++) {
+            if (brojKojiProvjeravamo % i == 0) {
+                sumaDjelitelja += i;
+            }
+        }
+
+
+        if (sumaDjelitelja == brojKojiProvjeravamo) {
+            System.out.println(brojKojiProvjeravamo + " je savršen broj.");
+        } else {
+            System.out.println(brojKojiProvjeravamo + " nije savršen broj.");
+        }
+
+        //Zadatak 3.
+        System.out.println("Zadatak 3.");
+        System.out.print("Unesite broj ocjena: ");
+        int brojOcjena = Integer.parseInt(unos.nextLine());
+
         int suma = 0;
+
+        for (int i = 0; i < brojOcjena; i++) {
+            System.out.print("Unesite ocjenu " + (i + 1) + ": ");
+            int ocjena = Integer.parseInt(unos.nextLine());
+            suma += ocjena;
+        }
+
+        double prosjek = (double) suma / brojOcjena;
+        System.out.printf("Prosjek ocjena: %.2f\n", prosjek);
+
+
+
+/*
+        String znakovi [] = new String[5];
+
+        for (String s : znakovi) {
+            System.out.println(s);
+        }
+*/
+
+
+
+
+
+/*
+        int brojevi[] = new int[5];
+        brojevi[0] = 0;
+        brojevi[1] = 2;
+        brojevi[2] = 4;
+        brojevi[3] = 6;
+        brojevi[4] = 8;
+
+        for (int i = 0; i < brojevi.length; i++) {
+            brojevi[i] = (int) (Math.random() * 100);
+        }
+        Arrays.sort(brojevi);
+
+        for (int i = brojevi.length-1; i >= 0; i--) {
+            System.out.println(brojevi[i]);
+        }
+*/
+  /*
+        for (int broj : brojevi) {
+            System.out.println(broj);
+        }
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+        Scanner unos = new Scanner(System.in);
+        int prviBroj = 0, drugiBroj = 0;
+
+        while (true) {
+            try {
+                System.out.println("Unesi dva cijela broja: ");
+                prviBroj = unos.nextInt();
+                drugiBroj = unos.nextInt();
+                break;
+            } catch (Exception e) {
+                System.out.println("Greška: Unesite samo cijele brojeve!");
+                unos.nextLine();
+            }
+        }
+
+        System.out.println("Zbroj: " + (prviBroj + drugiBroj) + " Umnozak: " + (prviBroj * drugiBroj));
+
+
+        System.out.println("Unesite godinu: ");
+        int godina = unos.nextInt();
+        if ((godina % 4 == 0 && godina % 100 != 0) || godina % 400 == 0) {
+            System.out.println("Godina je prijestupna.");
+        } else {
+            System.out.println("Godina nije prijestupna.");
+        }
+
+
+        unos.close();*/
+    }
+}
+
+     /*   int suma = 0;
         int j;
         int znam;
         int brojKvadrata = 0;
@@ -29,7 +158,7 @@ public class Main {
         }
 
 
-
+*/
 
 
 /*
@@ -69,9 +198,9 @@ public class Main {
             //for(int i = 1; i <= 10;i++){
           //  for(int j = 1; j <= 12;j++){
                 //     System.out.print("\t" + ((i-1) * 12 + j));
-            }
+          //  }
             //   System.out.println();
-        }
+      //  }
 
 
 
