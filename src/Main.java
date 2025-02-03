@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,6 +18,28 @@ public class Main {
 
 
         */
+
+        Scanner unos = new Scanner(System.in);
+        System.out.println("upisite vrjednost");
+        double broj = unos.nextDouble();
+        ArrayList<Double> listaNovcanica = new ArrayList<>(Arrays.asList(500.0, 200.0, 100.0, 50.0, 20.0, 10.0, 5.0, 2.0, 1.0, 0.5, 0.2, 0.1, 0.02, 0.01));
+        double kolikoPuta;
+
+        for (double novcanica : listaNovcanica) {
+            kolikoPuta = (int) (broj / novcanica);
+
+            if (kolikoPuta > 0) {
+                System.out.println((int) kolikoPuta + " novčanica od " + novcanica);
+            }
+
+            broj -= kolikoPuta * novcanica;
+            broj = Math.round(broj * 100.0)/100.0;
+        }
+
+
+        /*
+
+
         //Zadatak 1.
         Pattern uzorak = Pattern.compile("Algebra",Pattern.CASE_INSENSITIVE);
         Matcher matcher = uzorak.matcher("Posjetite Algebra Sveuciliste!");
@@ -64,9 +88,10 @@ public class Main {
 
         double prosjek = (double) suma / brojOcjena;
         System.out.printf("Prosjek ocjena: %.2f\n", prosjek);
+        unos.close();
 
 
-
+        /*
 /*
         String znakovi [] = new String[5];
 
