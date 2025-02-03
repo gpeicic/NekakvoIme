@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +12,20 @@ public class Main {
         System.out.println("Starts with Da:" + nizZnakova.startsWith("Da"));
         System.out.println("Starts with ka:" + nizZnakova.startsWith("ka"));
         System.out.println("Substring:" + nizZnakova.substring(6));
+
+
+
         */
+        //Zadatak 1.
+        Pattern uzorak = Pattern.compile("Algebra",Pattern.CASE_INSENSITIVE);
+        Matcher matcher = uzorak.matcher("Posjetite Algebra Sveuciliste!");
+        boolean pronadenUzorak = matcher.find();
+        if(pronadenUzorak){
+            System.out.println("Pronaden uzorak");
+        }
+        else{
+            System.out.println("Nije pronaden uzorak");
+        }
         //Zadatak 2.
         Scanner unos = new Scanner(System.in);
         System.out.println("Zadatak 2.");
