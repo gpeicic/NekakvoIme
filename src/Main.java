@@ -1,55 +1,66 @@
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<GeometrijskiLik> likovi = new ArrayList<>();
+        int izbor;
+        int izborLika;
 
-        Scanner unos = new Scanner(System.in);
-        //Zadatak 1.
-        Zadatak1(unos);
+        while(true){
+            System.out.println("Odaberite Opciju: ");
+            System.out.println("1.Novi Geometrijski lik");
+            System.out.println("2. Izlaz");
 
-        //Zadatak 2.
-        Zadatak2(unos);
-        unos.close();
+            izbor = scanner.nextInt();
+            if(izbor == 2){
+                break;
+            }
+            if(izbor == 1){
+                System.out.println("izaberite koji geometrijski lik:");
+                System.out.println("1.Pravokutnik");
+                System.out.println("2.Krug");
+                System.out.println("3.Trokut");
+                izborLika = scanner.nextInt();
 
+                switch (izborLika) {
+                    case 1 -> {
+                        System.out.println("Unesite prvu stranicu pravokutnika");
+                        double stranica1 = scanner.nextDouble();
+                        System.out.println("Unesite drugu stranicu pravokutnika");
+                        double stranica2 = scanner.nextDouble();
+                        likovi.add(new Pravokutnik(stranica1, stranica2));
+                    }
+                    case 2 -> {
+                        System.out.println("Unesite radijus kruga");
+                        double radijus = scanner.nextDouble();
+                        likovi.add(new Krug(radijus));
+                    }
+                    case 3 -> {
+                        System.out.println("Unesite prvu stranicu trokuta");
+                        double stranicaTrokuta1 = scanner.nextDouble();
+                        System.out.println("Unesite drugu stranicu trokuta");
+                        double stranicaTrokuta2 = scanner.nextDouble();
+                        System.out.println("Unesite trecu stranicu trokuta");
+                        double stranicaTrokuta3 = scanner.nextDouble();
+                        likovi.add(new Trokut(stranicaTrokuta1, stranicaTrokuta2, stranicaTrokuta3));
+                    }
+                    default -> System.out.println("Neispravan unos!");
+                }
+                System.out.println();
+                System.out.println();
+                for (GeometrijskiLik lik : likovi) {
+                    lik.ispisiPodatke();
+                }
+                System.out.println("_________________________________");
+                System.out.println();
 
-
-    }
-    public static void Zadatak1(Scanner unos) {
-
-
-        System.out.println("unesite niz znakova:");
-        String znakovi = unos.nextLine();
-
-
-        int slova = 0;
-        int brojevi = 0;
-        int ostaliZnakovi = 0;
-
-        for (char znak : znakovi.toCharArray()) {
-            if (Character.isLetter(znak)) {
-                slova++;
-            } else if (Character.isDigit(znak)) {
-                brojevi++;
-            } else {
-                ostaliZnakovi++;
+            }
+            else{
+                System.out.println("Neispravan unos!");
             }
         }
-
-        System.out.println("Slova: " + slova + " Brojevi: " + brojevi + " Ostali znakovi: " + ostaliZnakovi);
-
-    }
-    public static void Zadatak2(Scanner unos){
-        System.out.println("unesite niz znakova:");
-        String nizZnakova = unos.nextLine();
-        unos.close();
-
-
-        List<String> rijeci = Arrays.asList(nizZnakova.split("\\s+"));
-        Collections.reverse(rijeci);
-
-        System.out.println("Obrnuti redoslijed: " + String.join(" ", rijeci));
+        scanner.close();
     }
 }
 
