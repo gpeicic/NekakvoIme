@@ -2,16 +2,13 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Zivotinja> zivotinje = new ArrayList<>();
-        zivotinje.add(new Pas("Rex"));
-        zivotinje.add(new Macka("Micek"));
-        zivotinje.add(new Macka("Pegla"));
-        zivotinje.add(new Piton("Louis Python"));
+    ArrayList<Vozilo> vozila = new ArrayList<>();
+    vozila.add(new Automobil("BMW",18000, 5));
+    vozila.add(new Bicikl("Cube", 30, "planinski"));
 
-        for(Zivotinja zivotinja : zivotinje){
-            zivotinja.ispisiPodatke();
+        for (Vozilo vozilo : vozila) {
+            vozilo.kretanje();
         }
-
 
     }
 }
